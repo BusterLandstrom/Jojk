@@ -1,0 +1,36 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="using:Jojk.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="700"
+             Background="Transparent"
+             x:Class="Jojk.Views.ConnectView"
+             x:DataType="vm:ConnectViewModel">
+
+    <Panel Margin="24">
+        <Border Classes="authcard" Background="{DynamicResource Widget}" CornerRadius="16"
+                Padding="28" Width="320" VerticalAlignment="Center" HorizontalAlignment="Center"
+                BoxShadow="0 18 50 0 #40000000">
+            <StackPanel Spacing="18">
+                <StackPanel Spacing="4">
+                    <TextBlock Classes="hero" Text="Jojk" FontSize="36" FontWeight="Bold"
+                               Foreground="{DynamicResource Foreground}" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Connect to your Jellyfin server" FontSize="13" Opacity="0.6"
+                               Foreground="{DynamicResource Foreground}" HorizontalAlignment="Center"/>
+                </StackPanel>
+
+                <TextBox Classes="field" Text="{Binding IPInput}"
+                         Watermark="http://jellyfin-server:8096/">
+                    <TextBox.KeyBindings>
+                        <KeyBinding Gesture="Enter" Command="{Binding ConnectCommand}" />
+                    </TextBox.KeyBindings>
+                </TextBox>
+
+                <Button Classes="primary" Content="Connect" Command="{Binding ConnectCommand}"
+                        HorizontalAlignment="Stretch"/>
+                <TextBlock Classes="message" Text="{Binding MessageText}" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{Binding MessageColor}"/>
+            </StackPanel>
+        </Border>
+    </Panel>
+</UserControl>
