@@ -31,7 +31,7 @@ Jojk is a desktop application designed to enhance your music listening experienc
 - **Cross-platform Support**: Since it's built using Avalonia, Jojk can be ported to Linux and macOS quite simply (although it is primarily made for Windows as of now). Plans to make it more cross-platform are in the works.
 - **Integration with Jellyfin**: Seamlessly connects with Jellyfin servers to provide a unified music library and playback experience.
 - **User-friendly Interface**: Clean and intuitive UI designed for ease of use and customization.
-- **Efficient Performance**: Small, lightweight, simple calls. This also has plans for further improvements as time goes on.
+- **Efficient Performance**: Small, lightweight, simple calls. This also has plans for further efficiency improvements as time goes on.
 
 ## Prerequisites
 
@@ -54,7 +54,7 @@ git config --global user.email "your.email@example.com"
 
 ## Installation
 
-You can install Jojk directly from source. Here’s how you can do it:
+You can install Jojk directly from source. Hereâ€™s how you can do it:
 
 1. **Clone the Repository**:
 
@@ -92,9 +92,8 @@ Here are some basic instructions on how to use Jojk:
 
 1. **Launch the Application**: Run the executable from the build output directory or use the `dotnet` command as shown above.
 2. **Connect to Jellyfin Server**:
-   - Open the settings menu.
-   - Enter your Jellyfin server details (URL, port, username, and password).
-3. **Explore Your Library**: Use the navigation pane to browse through your music albums, artists, and genres.
+   - Upon launch enter your Jellyfin server details (URL, port, username, and password).
+3. **Explore Your Library**: Use the navigation pane to browse through your music. (album, artist, and genre navigation is planned, not available in this build)
 4. **Play Music**: Select a track and click play or use the media controls to manage playback.
 
 ## Development 
