@@ -7,11 +7,10 @@
         mc:Ignorable="d" Width="450" Height="800"
         x:Class="Jojk.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/avalonia-logo.ico"
+        Icon="/Assets/jojk.ico"
         WindowState="{Binding CurrentWindowState, Mode=TwoWay}"
         Title="Jojk" SystemDecorations="None" Background="Transparent">
 
-    <!-- Fix a little icon in illustrator -->
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
