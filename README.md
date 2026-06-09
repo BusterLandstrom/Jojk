@@ -4,6 +4,11 @@
 
 This application is built using Avalonia and aims to provide an intuitive and seamless music listening experience, primarily made to replace the regular Jellyfin web player.
 
+<div align="center">
+  <img src="https://raw.githubusercontent.com/BusterLandstrom/Jojk/refs/heads/master/Screenshots/Screenshot%202026-06-08%20233834.png" width="45%" />
+  <img src="https://raw.githubusercontent.com/BusterLandstrom/Jojk/refs/heads/master/Screenshots/Screenshot%202026-06-08%20233930.png" width="45%" />
+</div>
+
 ## Table of Contents
 - [Overview](#overview)
 - [Features](#features)
