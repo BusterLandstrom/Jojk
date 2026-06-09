@@ -8,8 +8,10 @@
         x:Class="Jojk.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
+        WindowState="{Binding CurrentWindowState, Mode=TwoWay}"
         Title="Jojk" SystemDecorations="None" Background="Transparent">
-         <!-- Fix a little icon in illustrator -->
+
+    <!-- Fix a little icon in illustrator -->
     <Design.DataContext>
         <vm:MainWindowViewModel/>
     </Design.DataContext>
@@ -29,7 +31,7 @@
 
                 <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="8" Margin="14,0,0,0" VerticalAlignment="Center">
                     <Button Classes="chrome" Background="{DynamicResource Negative}" Command="{Binding CloseApp}"/>
-                    <Button Classes="chrome" Background="{DynamicResource Neutral}"/>
+                    <Button Classes="chrome" Background="{DynamicResource Neutral}" Command="{Binding MinimizeApp}"/>
                 </StackPanel>
 
                 <Grid Grid.Column="1" PointerPressed="TopBar_PointerPressed" Background="Transparent"/>

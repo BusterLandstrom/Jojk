@@ -1,8 +1,10 @@
-using Jojk.Models;
-using ReactiveUI;
 using System;
 using System.Diagnostics;
+using System.Reactive;
 using System.Windows.Input;
+using Avalonia.Controls;
+using Jojk.Models;
+using ReactiveUI;
 
 namespace Jojk.ViewModels
 {
@@ -14,6 +16,14 @@ namespace Jojk.ViewModels
 
         private SongsViewModel? _songs;
 
+        private WindowState _currentWindowState = WindowState.Normal;
+
+        public WindowState CurrentWindowState
+        {
+            get => _currentWindowState;
+            set => this.RaiseAndSetIfChanged(ref _currentWindowState, value);
+        }
+
         private ViewModelBase _contentPanel;
         public ViewModelBase ContentPanel
         {
@@ -22,11 +32,15 @@ namespace Jojk.ViewModels
         }
 
         public ICommand CloseApp { get; }
+        public ICommand MinimizeApp { get; }
 
         public MainWindowViewModel()
         {
             ContentPanel = new ConnectViewModel(this);
 
+            MinimizeApp = ReactiveCommand.Create(MinimizeFunc);
+
+            // This close app thing looks like shit, also I need to handle the debugging in a logging system like I've said elsewhere
             var close = ReactiveCommand.Create(() => Environment.Exit(0));
             close.ThrownExceptions.Subscribe(ex => Debug.WriteLine($"close failed: {ex.Message}"));
             CloseApp = close;
@@ -39,6 +53,11 @@ namespace Jojk.ViewModels
             Player = new PlayerViewModel(AM);
             _songs = new SongsViewModel(this);
             ShowSongs();
+        }
+
+        private void MinimizeFunc() 
+        {
+            CurrentWindowState = WindowState.Minimized;
         }
 
         public void ShowSongs()
