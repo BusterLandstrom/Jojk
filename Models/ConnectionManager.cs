@@ -17,7 +17,7 @@ namespace Jojk.Models
     {
         private readonly string _connectionString;
         private readonly string _appName = "Jojk";
-        private readonly string _appVersion = "1.0";
+        private readonly string _appVersion = "1.1";
         private readonly string _deviceID;
         private readonly string _deviceName;
 
